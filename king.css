@@ -1,0 +1,136 @@
+/* king.css - Tema Seram + Modern + Berdarah */
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background: radial-gradient(circle at center, #000 0%, #150000 100%);
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Efek teks seram */
+h1, h2 {
+  font-family: 'Creepster', cursive;
+  color: #ff1a1a;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #8b0000, 0 0 60px #330000;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { 
+    opacity: 1; 
+    text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 25px #8b0000;
+  }
+  20%, 24%, 55% { 
+    opacity: 0.5; 
+    text-shadow: none; 
+  }
+}
+
+/* Box login & panel */
+#login-box, #mt-section {
+  background: rgba(10, 0, 0, 0.95);
+  border: 3px solid #ff0000;
+  border-radius: 15px;
+  box-shadow: 0 0 40px #ff0000, inset 0 0 20px #660000;
+  padding: 25px;
+  margin: 40px auto;
+  width: 350px;
+  transition: 0.5s;
+}
+
+#login-box:hover, #mt-section:hover {
+  box-shadow: 0 0 60px #ff1a1a, inset 0 0 25px #aa0000;
+}
+
+/* Input form */
+input, select {
+  width: 90%;
+  margin: 10px auto;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #1a0000;
+  color: #ff4d4d;
+  border: 1px solid #ff1a1a;
+  text-align: center;
+  outline: none;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 10px #ff1a1a, inset 0 0 5px #660000;
+}
+
+/* Tombol seram */
+button {
+  width: 95%;
+  margin: 12px auto;
+  padding: 14px;
+  font-size: 18px;
+  font-family: 'Creepster', cursive;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(90deg, #660000, #330000);
+  box-shadow: 0 0 20px #ff1a1a, inset 0 0 10px #440000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #990000, #550000);
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #ff0000, inset 0 0 15px #660000;
+}
+
+/* Toast notif */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background: #111;
+  color: #ff4d4d;
+  text-align: center;
+  border-radius: 8px;
+  padding: 15px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 25px #ff1a1a, inset 0 0 10px #330000;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from { bottom: 0; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { bottom: 30px; opacity: 1; }
+  to { bottom: 0; opacity: 0; }
+}
+
+/* Box preview teks MT */
+#preview-box {
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid #ff1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+  color: #ffcccc;
+  text-align: left;
+  font-family: 'Share Tech Mono', monospace;
+  box-shadow: inset 0 0 20px #660000;
+}
